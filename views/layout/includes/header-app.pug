@@ -1,0 +1,25 @@
+header.bg-indigo-600.p-4
+    .container.mx-auto.flex.justify-between.items-center
+        a(href="/")
+            h1.text-2xl.text-white.font-extrabold.text-center Real
+                span.font-normal Estates
+
+        nav(class="my-5 text-sm md:flex md:items-center md:gap-3 font-bold text-white hidden")
+            a(href="/auth/register") Create Account
+            a(href="/auth/login") Login
+
+div(class="bg-indigo-700 py-5 hidden lg:block")
+    div(class="container mx-auto flex justify-between")
+        nav(class="flex gap-4 items-center")
+            a(href="/category/1" class="text-sm font-bold uppercase text-white") Houses
+            a(href="/category/2" class="text-sm font-bold uppercase text-white") Departments
+            a(href="/category/3" class="text-sm font-bold uppercase text-white") Stores
+            a(href="/category/4" class="text-sm font-bold uppercase text-white") Parcels
+            a(href="/category/5" class="text-sm font-bold uppercase text-white") Cabins
+
+        form(action="/search" method="POST" class="flex gap-3 items-center")
+            input(type="hidden" name="_csrf" value= csrfToken)
+            label(for="word" class="text-sm uppercase font-bold text-white") Search
+            input(type="text" id="word" name="word" placeholder="Search Properties" class="p-2 rounded-lg shadow text-sm")
+
+            input(type="submit" class="bg-indigo-800 hover:bg-indigo-400 rounded-lg text-white uppercase font-bold p-2 cursor-pointer text-sm" value="Search")
